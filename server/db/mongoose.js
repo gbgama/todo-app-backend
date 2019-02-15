@@ -1,8 +1,13 @@
-var mongoose = require('mongoose');
+var mongoose = require("mongoose");
 
 mongoose.Promise = global.Promise;
-mongoose.connect("mongodb://prod:gbgamaprod10@ds135305.mlab.com:35305/heroku_60dl103q");
+mongoose.connect(
+  "mongodb://zrkdev:zrkdev11@ds063150.mlab.com:63150/heroku_1jwcwgtm",
+  {
+    useMongoClient: true
+  }
+);
 
-console.log("Connected to the database")
+console.log("Connected to the database");
 
-module.exports = {mongoose};
+module.exports = { mongoose };
