@@ -12,7 +12,11 @@ const port = process.env.PORT || 3000;
 app.use(bodyParser.json());
 
 app.use(function(req, res, next) {
-  res.setHeader("Access-Control-Allow-Origin", "https://gbgama-todoapp-frontend.herokuapp.com/*");
+  let allowedOrigins = ["https://gbgama-todoapp-frontend.herokuapp.com/", 'https://gbgama-todoapp-frontend.herokuapp.com/#/todos', 'https://gbgama-todoapp-frontend.herokuapp.com/#/about'];
+  let origin = req.headers.origin;
+  if(allowedOrigins.indexOf(origin) > -1){
+       res.setHeader('Access-Control-Allow-Origin', origin);
+  }
   res.setHeader(
     "Access-Control-Allow-Methods",
     "GET, POST, OPTIONS, PUT, PATCH, DELETE"
