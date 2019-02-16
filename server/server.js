@@ -12,7 +12,7 @@ const port = process.env.PORT || 3000;
 app.use(bodyParser.json());
 
 app.use(function(req, res, next) {
-  res.setHeader("Access-Control-Allow-Origin", "https://gbgama-todoapp-frontend.herokuapp.com/");
+  res.setHeader("Access-Control-Allow-Origin", "https://gbgama-todoapp-frontend.herokuapp.com/*");
   res.setHeader(
     "Access-Control-Allow-Methods",
     "GET, POST, OPTIONS, PUT, PATCH, DELETE"
